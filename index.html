@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS-Slot-Gam7 - Luxury Slot Machine</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Logo and User Info -->
+        <header class="header">
+            <div class="logo">
+                <h1>🎰 DS-SLOT-GAM7</h1>
+            </div>
+            <div class="user-info">
+                <div class="balance-display">
+                    <span class="label">Balance:</span>
+                    <span class="amount" id="balance">50,000</span>
+                    <span class="currency">💰</span>
+                </div>
+                <button class="btn-login" id="loginBtn">Login</button>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-container">
+            <!-- Jackpot Display -->
+            <div class="jackpot-display">
+                <div class="jackpot-card">
+                    <span class="label">JACKPOT</span>
+                    <span class="amount" id="jackpot">1,000,000</span>
+                </div>
+            </div>
+
+            <!-- Reel Container (6x5) -->
+            <div class="reel-container">
+                <div class="reel-wrapper">
+                    <!-- 5 Reels -->
+                    <div class="reel" id="reel1">
+                        <div class="symbol">🍎</div>
+                        <div class="symbol">🍊</div>
+                        <div class="symbol">🍇</div>
+                        <div class="symbol">🍓</div>
+                        <div class="symbol">💎</div>
+                        <div class="symbol">👑</div>
+                    </div>
+
+                    <div class="reel" id="reel2">
+                        <div class="symbol">🍎</div>
+                        <div class="symbol">🍊</div>
+                        <div class="symbol">🍇</div>
+                        <div class="symbol">🍓</div>
+                        <div class="symbol">💎</div>
+                        <div class="symbol">👑</div>
+                    </div>
+
+                    <div class="reel" id="reel3">
+                        <div class="symbol">🍎</div>
+                        <div class="symbol">🍊</div>
+                        <div class="symbol">🍇</div>
+                        <div class="symbol">🍓</div>
+                        <div class="symbol">💎</div>
+                        <div class="symbol">👑</div>
+                    </div>
+
+                    <div class="reel" id="reel4">
+                        <div class="symbol">🍎</div>
+                        <div class="symbol">🍊</div>
+                        <div class="symbol">🍇</div>
+                        <div class="symbol">🍓</div>
+                        <div class="symbol">💎</div>
+                        <div class="symbol">👑</div>
+                    </div>
+
+                    <div class="reel" id="reel5">
+                        <div class="symbol">🍎</div>
+                        <div class="symbol">🍊</div>
+                        <div class="symbol">🍇</div>
+                        <div class="symbol">🍓</div>
+                        <div class="symbol">💎</div>
+                        <div class="symbol">👑</div>
+                    </div>
+                </div>
+
+                <!-- Win Display -->
+                <div class="win-display" id="winDisplay">
+                    <span id="winAmount">0</span>
+                </div>
+            </div>
+
+            <!-- Game Stats -->
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="label">Last Win</span>
+                    <span class="value" id="lastWin">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Free Spins</span>
+                    <span class="value" id="freeSpins">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Multiplier</span>
+                    <span class="value" id="multiplier">1x</span>
+                </div>
+                <div class="stat">
+                    <span class="label">VIP Level</span>
+                    <span class="value" id="vipLevel">1</span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <!-- Bet Selection -->
+                <div class="bet-control">
+                    <label>Bet Amount:</label>
+                    <div class="bet-buttons">
+                        <button class="bet-btn" data-bet="10">10</button>
+                        <button class="bet-btn" data-bet="50">50</button>
+                        <button class="bet-btn active" data-bet="100">100</button>
+                        <button class="bet-btn" data-bet="500">500</button>
+                    </div>
+                    <span class="bet-display">Current Bet: <strong id="currentBet">100</strong></span>
+                </div>
+
+                <!-- Spin Buttons -->
+                <div class="spin-controls">
+                    <button class="btn-spin" id="spinBtn">
+                        <span>SPIN</span>
+                    </button>
+                    <button class="btn-secondary" id="autoSpinBtn">Auto Spin (5)</button>
+                    <button class="btn-secondary" id="turboSpinBtn">⚡ Turbo</button>
+                </div>
+
+                <!-- Additional Controls -->
+                <div class="additional-controls">
+                    <button class="btn-info" id="paytableBtn">📋 Paytable</button>
+                    <button class="btn-info" id="settingsBtn">⚙️ Settings</button>
+                    <button class="btn-info" id="bonusBtn">🎁 Bonus</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <span>Deposit: <button class="btn-footer">💳 Add Funds</button></span>
+                <span>Withdraw: <button class="btn-footer">💸 Cash Out</button></span>
+                <span class="copyright">© 2026 DS-Slot-Gam7. Luxury Gaming Experience.</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to DS-Slot-Gam7</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Login</button>
+                <button type="button" class="btn-secondary">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Paytable Modal -->
+    <div class="modal" id="paytableModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Paytable - 25 Paylines</h2>
+            <div class="paytable">
+                <table>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>3x</th>
+                        <th>4x</th>
+                        <th>5x</th>
+                    </tr>
+                    <tr>
+                        <td>👑</td>
+                        <td>500</td>
+                        <td>2,000</td>
+                        <td>5,000</td>
+                    </tr>
+                    <tr>
+                        <td>💎</td>
+                        <td>300</td>
+                        <td>1,500</td>
+                        <td>4,000</td>
+                    </tr>
+                    <tr>
+                        <td>🍓</td>
+                        <td>100</td>
+                        <td>500</td>
+                        <td>2,000</td>
+                    </tr>
+                    <tr>
+                        <td>🍇</td>
+                        <td>50</td>
+                        <td>300</td>
+                        <td>1,000</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
